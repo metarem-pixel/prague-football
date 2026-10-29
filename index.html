@@ -328,10 +328,11 @@ img{max-width:100%}
 <h2 id="apply-h" style="margin: 0 0 16px; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(28px, 3vw, 40px); line-height: 1.15">Заявка на оцінку</h2>
 <p style="margin: 0; color: #4A5361">Розкажіть про гравця. Відповімо протягом [N] робочих днів. Якщо гравцеві немає 18 — заявку заповнює один із батьків.</p>
 </div>
-<form action="https://formsubmit.co/metarem@gmail.com" method="POST" style="flex: 999 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
-<input type="hidden" name="_subject" value="Нова заявка GoalPlus (UA)">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+<form action="https://api.web3forms.com/submit" method="POST" style="flex: 999 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<input type="hidden" name="access_key" value="803a0421-aa11-48af-a7b6-0b459e112ece">
+<input type="hidden" name="subject" value="Нова заявка GoalPlus (UA)">
+<input type="hidden" name="from_name" value="GoalPlus — сайт">
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-name" style="font-size: 14px; font-weight: 600">Ім'я гравця</label><input id="f-name" name="player_name" required type="text" style="font: inherit; padding: 12px 14px; border: 1px solid #8A939F; border-radius: 6px; min-height: 48px; box-sizing: border-box"></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-year" style="font-size: 14px; font-weight: 600">Рік народження</label><input id="f-year" name="birth_year" type="text" inputmode="numeric" style="font: inherit; padding: 12px 14px; border: 1px solid #8A939F; border-radius: 6px; min-height: 48px; box-sizing: border-box"></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-pos" style="font-size: 14px; font-weight: 600">Позиція</label><input id="f-pos" name="position" type="text" style="font: inherit; padding: 12px 14px; border: 1px solid #8A939F; border-radius: 6px; min-height: 48px; box-sizing: border-box"></div>
