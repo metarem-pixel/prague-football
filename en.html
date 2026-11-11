@@ -359,12 +359,12 @@ summary.wi-sum::-webkit-details-marker{display:none}details.wi-prices[open] .wi-
     e.preventDefault();
     b.disabled=true; b.style.opacity='0.6'; s.style.color='#4A5361'; s.textContent='Sending…';
     fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-      .then(function(r){return r.json();})
+      .then(function(r){return r.text().then(function(t){try{return JSON.parse(t);}catch(x){throw new Error('HTTP '+r.status+': '+t.slice(0,120));}});})
       .then(function(d){
         if(d.success){ f.reset(); s.style.color='#1E7B3C'; s.textContent='Thank you! We\'ve received your application and will be in touch.'; }
         else { throw new Error(d.message||'error'); }
       })
-      .catch(function(){ s.style.color='#B42318'; s.textContent='Sending failed. Please try again or contact us directly.'; })
+      .catch(function(err){ s.style.color='#B42318'; s.textContent='Sending failed. Please try again or contact us directly.'+(err&&err.message?' ['+err.message+']':''); })
       .finally(function(){ b.disabled=false; b.style.opacity='1'; });
   });
 })();
