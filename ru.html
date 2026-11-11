@@ -358,7 +358,7 @@ summary.wi-sum::-webkit-details-marker{display:none}details.wi-prices[open] .wi-
   f.addEventListener('submit',function(e){
     e.preventDefault();
     b.disabled=true; b.style.opacity='0.6'; s.style.color='#4A5361'; s.textContent='Отправляем…';
-    fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
       .then(function(r){return r.json();})
       .then(function(d){
         if(d.success){ f.reset(); s.style.color='#1E7B3C'; s.textContent='Спасибо! Заявка получена — мы свяжемся с вами.'; }
